@@ -1,5 +1,5 @@
 async function runTests() {
-  const baseUrl = 'http://localhost:5000/api';
+  const baseUrl = 'https://expense-tracker-api-nine-beta.vercel.app/api';
   const testEmail = `test${Date.now()}@university.com`;
   const testPassword = 'securepassword123';
 
@@ -21,7 +21,7 @@ async function runTests() {
       body: JSON.stringify({ email: testEmail, password: testPassword })
     });
     const loginData = await loginRes.json();
-    console.log('2. Login:', loginData.token ? 'Success! JWT Token received.' : 'Failed');
+    console.log('2. Login:', loginData);
     
     const token = loginData.token;
 
